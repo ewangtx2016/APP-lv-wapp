@@ -1,0 +1,9 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <view class='header'>
+    <form>
+      <input value='{{inputval}}' bindinput='bindInput' bindblur="bindBlur" bindfocus="bindFocus" bindinput='bindInput'  confirm-hold='true' confirm-type='done' type='text' placeholder-class='input-hover' class='{{closeStatus ? "" : "input-focus"}} input-text' placeholder='在此输入要翻译的文本'></input>
+    </form>
+    <view bindtap='clearinput'  class='{{closeStatus ? "" :"input-hover"}} icon-input-close iconfont icon-guanbi2fill'></view>
+  </view>
+</view>

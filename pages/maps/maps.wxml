@@ -1,0 +1,39 @@
+<view>
+  
+  <view>
+    <map id='lvmap' class='lvmap' markers='{{marks}}'  longitude='{{log}}' latitude='{{lat}}' scale="{{cengji}}">
+      <cover-view class='lvfang'>
+        <cover-view class='lvfang_jia' bindtap='jia'>+</cover-view>
+        <cover-view class='lvfang_jian' bindtap='jian'>-</cover-view>
+      </cover-view>
+      <cover-view class='get-map' bindtap='getMap'>
+        获取坐标
+      </cover-view>
+    </map>
+  </view>
+  <scroll-view class='biglv' scroll-y scroll-with-animation="true" enable-back-to-top="true">
+   
+   
+    <view class='lvone' wx:for="{{marks}}" wx:key="{{item.id}}">
+      <view class='h1 cls'>
+        <view class='page-img'>
+          <image mode='aspectFill' lazy-load="true" src='/images/weixin_jpg.jpg'></image>
+        </view>
+        <view class='page-title'>
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='tel'>
+            <text>{{item.tel}}</text>
+          </view>
+        </view>
+        <view class='add'>
+          <text>{{item.add}}</text>
+        </view>
+      </view>
+    </view>
+
+
+  </scroll-view>
+
+</view>

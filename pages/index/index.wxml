@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class='cfa-content'>
+  <view class='header'>
+    <view class='search'>
+      <view class='sear-box'>
+        <icon type='search' size='20'></icon>
+        <input disabled='true' bindtap='inputclick' placeholder-class="input-place" type='text' placeholder='想住在哪里？'></input>
+      </view>
+    </view>
+    <view class='collect'>
+      <view class='collect-flex'>
+        <image mode="aspectFit" src='/images/job.jpg'></image>
+        <text class='text'>收藏夹</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- banner start -->
+  <view class='banner'>
+    <swiper autoplay="{{autoplay}}" circular="{{circular}}" class='banner-swiper' indicator-color="{{iconcolor}}" indicator-active-color='{{iconhovercolor}}' indicator-dots="{{iconis}}" bindchange="imgcheck">
+      <block wx:for="{{photos}}" wx:key="{{photos.id}}">
+        <swiper-item>
+          <image bindtap='clickimg' class='banner-img' src='{{item.imgurl}}' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- banner end -->
+
+  <!-- 内容区域- start -->
+  <view class='list'>
+    <view class='title-h1'>
+      <text>中博金融-CFA</text>
+    </view>
+    <scroll-view scroll-into-view="pic-{{scrollid}}" scroll-y="true" class='index-scroll-view'>
+      <view>
+        <block wx:for="{{pics}}" wx:key="{{item.id}}">
+          <navigator class='list-one' url='{{item.url}}' open-type='navigate' hover-class="hover">
+            <view id='pic-{{item.id}}'>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 内容区域- end -->
+  <view class='page-footer'>
+    
+  </view>
+</view>

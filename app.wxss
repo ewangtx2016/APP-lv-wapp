@@ -1,0 +1,11 @@
+/**app.wxss**/
+@import "./fonts/iconfont.wxss";
+
+
+page {
+  background: #f3f3f3;
+}
+
+image {
+  display: block;
+}
